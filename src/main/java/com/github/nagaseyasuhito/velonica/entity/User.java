@@ -1,11 +1,8 @@
 package com.github.nagaseyasuhito.velonica.entity;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
 
 import com.github.nagaseyasuhito.narcissus.entity.BaseManagedEntity;
 
@@ -16,19 +13,23 @@ import com.github.nagaseyasuhito.narcissus.entity.BaseManagedEntity;
  */
 @Entity
 public class User extends BaseManagedEntity {
+	// @Entity
+	// public static class Removed extends User {
+	// private static final long serialVersionUID = 1L;
+	// }
+
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 生年月日。
+	 * 所属団体。
 	 */
-	@Column
-	@Temporal(TemporalType.DATE)
-	private Date birthDate;
+	@ManyToOne(optional = false)
+	private Company company;
 
 	/**
 	 * メールアドレス。
 	 */
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false)
 	private String mailAddress;
 
 	/**
@@ -37,8 +38,8 @@ public class User extends BaseManagedEntity {
 	@Column(nullable = false)
 	private String password;
 
-	public Date getBirthDate() {
-		return this.birthDate;
+	public Company getCompany() {
+		return this.company;
 	}
 
 	public String getMailAddress() {
@@ -49,8 +50,8 @@ public class User extends BaseManagedEntity {
 		return this.password;
 	}
 
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
+	public void setCompany(Company company) {
+		this.company = company;
 	}
 
 	public void setMailAddress(String mailAddress) {
