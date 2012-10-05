@@ -15,11 +15,6 @@ import com.google.common.collect.Sets;
  */
 @Entity
 public class Company extends BaseManagedEntity {
-	// @Entity
-	// public static class Removed extends Company {
-	// private static final long serialVersionUID = 1L;
-	// }
-
 	private static final long serialVersionUID = 1L;
 
 	/**

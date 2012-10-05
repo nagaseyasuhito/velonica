@@ -13,11 +13,6 @@ import com.github.nagaseyasuhito.narcissus.entity.BaseManagedEntity;
  */
 @Entity
 public class User extends BaseManagedEntity {
-	// @Entity
-	// public static class Removed extends User {
-	// private static final long serialVersionUID = 1L;
-	// }
-
 	private static final long serialVersionUID = 1L;
 
 	/**
